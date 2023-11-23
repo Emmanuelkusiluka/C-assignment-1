@@ -22,3 +22,31 @@ namespace PrintFirstOneHundred
         }
     }
 }
+
+
+// extra solutions 
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int row = 1;
+
+        do
+        {
+            int col = 1;
+            do
+            {
+                Console.Write($"{row * col}\t");
+                col++;
+            } while (col <= 12);
+
+            Console.WriteLine(); // Move to the next row after printing each row
+            row++;
+
+        } while (row <= 10);
+    }
+}
+
