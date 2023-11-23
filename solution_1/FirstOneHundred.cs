@@ -50,3 +50,54 @@ class Program
     }
 }
 
+
+
+// second question 
+using System;
+
+class Employee
+{
+    public string Name { get; set; }
+    public double Salary { get; set; }
+
+    public Employee(string name, double salary)
+    {
+        Name = name;
+        Salary = salary;
+    }
+
+    public double CalculateBonus(double salesPercentage)
+    {
+        if (salesPercentage > 0)
+        {
+            return 0.15 * Salary; // apa 15% bonus
+        }
+        else
+        {
+            return 0; //Other wise no bonus
+        }
+    }
+}
+
+
+class Program
+{
+    static void Main()
+    {
+        //creating new instance of Employee class for Juma
+        Employee juma = new Employee("Juma", 50000);
+
+        // Juma's sales percentage
+        double salesPercentage = 0.6; // 60%
+
+        // Calculate and add the bonus
+        double bonus = juma.CalculateBonus(salesPercentage);
+        double totalSalary = juma.Salary + bonus;
+
+        Console.WriteLine($"{juma.Name}'s salary: {juma.Salary} TSH");
+        Console.WriteLine($"{juma.Name}'s bonus: {bonus} TSH");
+        Console.WriteLine($"Total salary with bonus: {totalSalary} TSH");
+    }
+}
+
+ 
